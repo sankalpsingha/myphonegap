@@ -33,6 +33,11 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+
+
+      $(document).ready(function(){
+
+
         console.log('\'Allo \'Allo!');
         // Let us load the content dynamically
         // set up some variables
@@ -73,11 +78,21 @@ var app = {
           $r.spin().done(function(price) {
               $('.spinner').on('click', clickHandler);
               $('.spinner span').show();
-              loadContent('/questionpage.html');
+              loadContent('questionpage.html');
           });
         };
 
         $('.spinner').on('click', clickHandler);
+
+
+
+
+
+
+      });
+
+
+
 
 
     },
