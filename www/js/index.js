@@ -33,7 +33,53 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        console.log('\'Allo \'Allo!');
+        // Let us load the content dynamically
+        // set up some variables
+        var $mainContent = $("#main-content"),
+          $pageWrap    = $("#page-wrap"),
+          baseHeight   = 0,
+          $el;
+
+        // calculate wrapper heights to prevent jumping when loading new content
+        $pageWrap.height($pageWrap.height());
+        baseHeight = $pageWrap.height() - $mainContent.height();
+
+        function loadContent(href) {
+
+          $mainContent
+              .find("#guts")
+              .fadeOut(200, function() { // fade out the content of the current page
+                  $mainContent
+                      .hide()
+                      .load(href + " #guts", function() { // load the contents of whatever href is
+                          $mainContent.fadeIn(200, function() {
+                              $pageWrap.animate({
+                                  height: baseHeight + $mainContent.height() + "px"
+                          });
+                          });
+
+                      });
+
+              });
+
+        }
+
+        var $r = $('.roulette').fortune(24);
+
+        var clickHandler = function() {
+          $('.spinner').off('click');
+          $('.spinner span').hide();
+          $r.spin().done(function(price) {
+              $('.spinner').on('click', clickHandler);
+              $('.spinner span').show();
+              loadContent('/questionpage.html');
+          });
+        };
+
+        $('.spinner').on('click', clickHandler);
+
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

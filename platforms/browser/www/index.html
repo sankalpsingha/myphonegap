@@ -43,14 +43,97 @@
 </head>
 
 <body>
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
-        </div>
-    </div>
+
+
+
+  <div id="page-wrap">
+
+
+      <nav>
+          <img src="images/hamburger.png" width="40" alt="">
+          <img src="images/logo.png" width="150" alt="">
+         <span>Player</span>
+      </nav>
+
+
+     <header>
+
+         <div class="topi top-things">
+             <img src="images/wiziassets/topi.png" alt="" width="40">
+             <span>50</span>
+         </div>
+
+         <div class="shiny top-things">
+           <img src="images/wiziassets/shiny.png" alt="" width="20">
+           <span>50</span>
+         </div>
+
+
+         <div class="gola top-things">
+             <img src="images/wiziassets/gola.png" alt="" width="30">
+             <span>50</span>
+         </div>
+
+
+         <div class="dhakdhak top-things">
+             <img src="images/wiziassets/dhakdhak.png" alt="" width="30">
+             <span>50</span>
+         </div>
+
+     </header>
+
+       <div id="main-content">
+           <div id="guts">
+                <main>
+
+             <h1>Spin the wizi wheel</h1>
+
+             <div class="container">
+                <div class="roulette">
+                </div>
+                <button class="spinner"><span>Spin!</span><div class="pointer"></div></button>
+              </div>
+
+        </main>
+
+
+             <aside>
+
+                 <div class="spins-left bottom-flex">
+                     <img src="images/wiziassets/spin%20again.png" width="50" alt="">
+                     <p>Spins Left</p>
+                 </div>
+
+
+                 <div class="spin-again">
+                     <img src="images/wiziassets/wizi%20coin.png" alt="" width="50">
+                     <p>Spin Again</p>
+                 </div>
+
+
+
+                 <div class="buy-more-spins">
+                     <img src="images/wiziassets/h%20button3.png" alt="" width="50">
+                     <p>Something Cool</p>
+                 </div>
+
+             </aside>
+           </div>
+       </div>
+
+
+
+     </div>
+
+
+
+
+
+
     <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/spinner.js"></script>
+
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();
